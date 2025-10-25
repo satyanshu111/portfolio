@@ -1,0 +1,231 @@
+/*
+ * Portfolio site styles
+ *
+ * A clean and modern layout built with responsive considerations. Variables define
+ * the colour palette for easy theming. Sections are spaced generously to
+ * improve readability. Navigation links allow smooth scrolling to page
+ * sections. Icons are provided by Font Awesome via the HTML head.
+ */
+
+/* Root variables for easy colour adjustments */
+:root {
+  --primary-color: #007acc;
+  --secondary-color: #90e0ef;
+  --accent-color: #00b4d8;
+  --background-color: #ffffff;
+  --text-color: #333333;
+}
+
+/* Basic resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/* Header / hero section */
+#hero {
+  position: relative;
+  /* Use a decorative image with a coloured overlay for the hero background. The
+     first linear-gradient provides a semi‑transparent colour overlay, and the
+     second layer specifies the actual image. */
+  background: 
+    linear-gradient(135deg, rgba(0, 180, 216, 0.85), rgba(144, 224, 239, 0.85)),
+    url('hero-bg.png') center/cover no-repeat;
+  color: #ffffff;
+  text-align: center;
+  padding: 120px 20px 80px;
+  overflow: hidden;
+}
+
+/* Navigation bar at top of hero */
+#hero nav {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+#hero nav a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+#hero nav a:hover {
+  opacity: 0.8;
+}
+
+/* Hero content */
+ .hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content h1 span {
+  color: var(--primary-color);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+ .social-links a {
+  margin: 0 12px;
+  color: #ffffff;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+ }
+
+.social-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Download CV button styling inside hero */
+.social-links .download-cv {
+  display: inline-block;
+  margin-left: 15px;
+  padding: 8px 16px;
+  background: #ffffff;
+  color: var(--primary-color);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.social-links .download-cv:hover {
+  background: #e0f7fa;
+  color: var(--accent-color);
+}
+
+/* Main content sections */
+main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--primary-color);
+  display: inline-block;
+}
+
+/* Education, Experience and Project items */
+.education-item,
+.experience-item,
+.project-item,
+.extracurricular-item {
+  margin-bottom: 30px;
+}
+
+.experience-item h3,
+.project-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.education-item p,
+.experience-item p,
+.project-item p,
+.extracurricular-item p {
+  margin: 5px 0;
+}
+
+.experience-item ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+/* Skills list styling */
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list li {
+  margin-bottom: 8px;
+}
+
+/* Achievements list styling */
+.achievements-list {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+/* Contact section */
+#contact .contact-info p {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+#contact .contact-info i {
+  margin-right: 8px;
+  color: var(--primary-color);
+}
+
+#contact .contact-info a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#contact .contact-info a:hover {
+  color: var(--primary-color);
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  #hero nav {
+    position: static;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  #hero nav a {
+    display: inline-block;
+    margin: 0 8px;
+  }
+}
