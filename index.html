@@ -1,129 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Satyanshu&#39;s Portfolio</title>
-  <!-- Google Fonts for modern typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome icons for social links -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header id="hero">
-    <nav>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#extracurricular">Extracurricular</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="hero-content">
-      <h1>Hello, I&#39;m <span>Satyanshu</span></h1>
-      <p>Engineering Physics student at IIT Guwahati, passionate about software development</p>
-      <div class="social-links">
-        <a href="mailto:satyanshu624@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a href="tel:+919939202214" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
-        <a href="https://linkedin.com/in/satyanshu-250b90261" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/satyanshu111" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a class="download-cv" href="Satyanshu_CV_OC.pdf" download aria-label="Download CV">Download CV</a>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I am currently pursuing a Bachelor of Technology in Engineering Physics at the Indian Institute of Technology, Guwahati (IITG). My academic journey has provided a solid foundation in both physics and computer science, allowing me to blend analytical problem‑solving skills with software development. I have a keen interest in full‑stack development and have built several projects leveraging Python, C/C++, Django, HTML and CSS. My goal is to create impactful solutions that bridge technology and everyday problems.</p>
-    </section>
-    <section id="education">
-      <h2>Education</h2>
-      <div class="education-item">
-        <h3>Indian Institute of Technology, Guwahati (IITG)</h3>
-        <p><strong>B.Tech in Engineering Physics</strong> | Oct 2022 – May 2026 | CPI: 7.8 (current)</p>
-        <p><strong>Relevant Coursework:</strong> Data Structures, Linear Algebra, Algorithm Analysis, Differential Equations, Operating Systems, Multivariate Calculus, DBMS, Mathematical Physics.</p>
-      </div>
-    </section>
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="experience-item">
-        <h3>Software Development Intern, Amazon India</h3>
-        <p><em>May 2025 – July 2025 | Hyderabad, India</em></p>
-        <ul>
-          <li>Implemented a system to trace and roll back membership history changes in Maple, Amazon’s role‑based access management system, improving transparency of policy‑driven access control across organization memberships.</li>
-          <li>Built CSV export functionality for added/removed members using SuperCSV and integrated storage in a dedicated S3 bucket across environments.</li>
-          <li>Developed an API to generate pre‑signed download URLs for CSV files and integrated them with Ruby middleware.</li>
-          <li>Expanded unit tests achieving over 90% coverage, catching edge‑case bugs before production.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-item">
-        <h3>Nutri‑Genius</h3>
-        <p><em>Apr 2024 – Jun 2024</em></p>
-        <p>A full‑stack calorie tracker that enables users to search for foods, track daily calorie intake and provides complete diet analysis with clear, at‑a‑glance daily summaries and concise per‑meal breakdowns. Integrated with a Nutrition API to fetch nutritional information for various foods including micronutrient details.</p>
-        <p><strong>Tech stack:</strong> Django, HTML, CSS</p>
-        <p><a href="https://bit.ly/4mCKrfo" target="_blank">Project Link</a></p>
-      </div>
-      <div class="project-item">
-        <h3>TraineeX</h3>
-        <p><em>Aug 2025 – Sep 2025</em></p>
-        <p>Designed a desktop scheduling platform with role‑based dashboards (Admin/Trainer), clash‑free calendars, bulk assignments, full CRUD and automatic monthly reports for organizations to streamline routine training operations. Deployed reliable CSV read and write handling to guarantee data integrity with format checks and safeguards.</p>
-        <p><a href="http://bit.ly/3Ikni2X" target="_blank">Project Link</a></p>
-      </div>
-      <div class="project-item">
-        <h3>Whats‑Grossing</h3>
-        <p><em>Dec 2023 – Jan 2024</em></p>
-        <p>A full‑stack social media web application using Django for the back‑end and HTML, CSS for the front‑end. Enabled user authentication for secure registration and login. Added features for users to create posts with images and text and read posts from other users.</p>
-        <p><a href="https://bit.ly/whtgross" target="_blank">Project Link</a></p>
-      </div>
-    </section>
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      <ul class="skills-list">
-        <li><strong>Programming:</strong> C/C++, Python, Java</li>
-        <li><strong>Web Technologies:</strong> HTML, CSS, Django, JavaScript</li>
-        <li><strong>Database Technologies:</strong> SQL, MongoDB</li>
-        <li><strong>Operating Systems:</strong> Windows, Linux</li>
-        <li><strong>Miscellaneous:</strong> Git/GitHub, MATLAB, LaTeX</li>
-      </ul>
-    </section>
-    <section id="achievements">
-      <h2>Achievements</h2>
-      <ul class="achievements-list">
-        <li>Codeforces highest rating 1530 (Specialist) with top global ranks in multiple rounds.</li>
-        <li>JEE Mains 2022: AIR 1488 among 2.2 million candidates.</li>
-        <li>JEE Advanced 2022: AIR 5759 among 150 k candidates.</li>
-        <li>KVPY SA 2021: AIR 423.</li>
-        <li>Astronomy Olympiad IOQA: Qualified IOQA Part 1 (top 255 students).</li>
-      </ul>
-    </section>
-    <section id="extracurricular">
-      <h2>Extracurricular</h2>
-      <div class="extracurricular-item">
-        <h3>Google Cloud Study Jams 2023</h3>
-        <p><em>Sep 2023 – Oct 2023 | GDSC, RNSIT, Bangalore, India</em></p>
-        <p>Completed hands‑on Google Cloud labs covering core GCP services and workflows. Explored Generative AI on GCP and ranked among the top 80 candidates from Tier‑A colleges.</p>
-      </div>
-    </section>
-    <section id="contact">
-      <h2>Get In Touch</h2>
-      <p>I’m currently open to opportunities and collaborations. Feel free to reach out via email or phone.</p>
-      <div class="contact-info">
-        <p><i class="fa-solid fa-phone"></i> <a href="tel:+919939202214">+91 99392 02214</a></p>
-        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:satyanshu624@gmail.com">satyanshu624@gmail.com</a></p>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>© 2025 Satyanshu. All rights reserved.</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Satyanshu | Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-aqFwJgBQ1WjGkM5i9qd6fBzv0oyEmcjh2y2uwFQqTmR19qZjkWm9tl0zHXLkbH8xI/p3fSm1ilb57g1Gj/IppA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Additional global styles for smoother transitions */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- React and Babel scripts from CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Main React application -->
+    <script type="text/babel">
+      const { useState, useEffect, useRef } = React;
+
+      // Personal information and data objects
+      const personalInfo = {
+        name: "Satyanshu",
+        tagline:
+          "Engineering Physics student & aspiring software developer passionate about crafting full‑stack applications.",
+        cvLink: "Satyanshu_CV_OC.pdf",
+        email: "satyanshu624@gmail.com",
+        phone: "+91 9939202214",
+        address: "Purnea, Bihar, India",
+        linkedin: "https://linkedin.com/in/satyanshu-250b90261",
+        github: "https://github.com/satyanshu111",
+      };
+
+      const aboutDescription =
+        "I'm currently pursuing a B.Tech in Engineering Physics at IIT Guwahati, where I hone my analytical and problem‑solving skills. I enjoy applying principles of physics and computation to build practical solutions, from designing full‑stack web applications to exploring new technologies. I thrive on continuous learning and aim to contribute meaningfully to impactful projects.";
+
+      const education = [
+        {
+          institution: "Indian Institute of Technology, Guwahati (IITG)",
+          timeframe: "Oct 2022 – May 2026",
+          degree: "B.Tech in Engineering Physics",
+          grade: "CPI: 7.8 (current)",
+          location: "Guwahati, Assam",
+          coursework: [
+            "Data Structures",
+            "Linear Algebra",
+            "Algorithm Analysis",
+            "Differential Equations",
+            "Operating Systems",
+            "Multivariate Calculus",
+            "DBMS",
+            "Mathematical Physics",
+          ],
+        },
+      ];
+
+      const experience = [
+        {
+          company: "Amazon India",
+          role: "Software Development Intern",
+          timeframe: "May 2025 – Jul 2025",
+          location: "Hyderabad, India",
+          points: [
+            "Implemented a system to trace and roll back membership history changes in Maple (Amazon’s role-based access management system), improving transparency of policy‑driven access control across org memberships.",
+            "Built CSV export functionality for added/removed members using SuperCSV and integrated storage in a dedicated S3 bucket across environments.",
+            "Developed an API to generate pre‑signed download URLs for CSV files and integrated them with Ruby middleware.",
+            "Expanded unit tests achieving more than 90% coverage, catching edge‑case bugs before production.",
+          ],
+        },
+      ];
+
+      const projects = [
+        {
+          name: "Nutri‑Genius",
+          timeframe: "Apr 2024 – Jun 2024",
+          type: "Personal Project",
+          description:
+            "Built a full‑stack calorie tracker that enables users to search for foods, track daily calorie intake and receive diet analysis with clear summaries and concise per‑meal breakdowns.",
+          stack: "Django, HTML, CSS",
+          link: "https://bit.ly/4mCKrfo",
+        },
+        {
+          name: "TraineeX",
+          timeframe: "Aug 2025 – Sep 2025",
+          type: "Personal Project",
+          description:
+            "Designed a desktop scheduling platform with role‑based dashboards (Admin/Trainer), clash‑free calendars, bulk assignments, full CRUD, and auto monthly reports for organizations to streamline routine training operations.",
+          stack: "Python, CSV", // Not specified in CV but can mention general tech
+          link: "http://bit.ly/3Ikni2X",
+        },
+        {
+          name: "Whats‑Grossing",
+          timeframe: "Dec 2023 – Jan 2024",
+          type: "Personal Project",
+          description:
+            "Created a full‑stack social media web application with user authentication, allowing users to register and sign in securely, create posts with images and text, and read posts from others with ease.",
+          stack: "Django, HTML, CSS",
+          link: "https://bit.ly/whtgross",
+        },
+      ];
+
+      const skills = [
+        {
+          category: "Programming",
+          items: ["C/C++", "Python", "Java (Elementary)"]
+        },
+        {
+          category: "Operating Systems",
+          items: ["Windows", "Linux (Elementary)"]
+        },
+        {
+          category: "Web Technologies",
+          items: ["HTML", "CSS", "JavaScript (Elementary)", "Django"]
+        },
+        {
+          category: "Database Technologies",
+          items: ["SQL", "MongoDB (Elementary)"]
+        },
+        {
+          category: "Miscellaneous",
+          items: ["Git/GitHub", "MATLAB (Elementary)", "LaTeX (Elementary)"]
+        },
+      ];
+
+      const achievements = [
+        {
+          title: "Codeforces Specialist",
+          details: "Highest Rating 1530 | ID: Satyanshu111",
+          extra: [
+            "Round 1044 (Div. 2): Global Rank 717 among 35,000+ participants.",
+            "Round 1006 (Div. 3): Global Rank 1260 among 58,000+ participants.",
+          ],
+        },
+        {
+          title: "JEE Mains 2022",
+          details: "AIR 1488 among 2.2M candidates",
+          extra: [],
+        },
+        {
+          title: "JEE Advanced 2022",
+          details: "AIR 5759 among 150k candidates",
+          extra: [],
+        },
+        {
+          title: "KVPY SA 2021",
+          details: "AIR 423 out of around 50,000 candidates",
+          extra: [],
+        },
+        {
+          title: "Astronomy Olympiad (IOQA)",
+          details: "Qualified IOQA Part 1 (Top 255 students)",
+          extra: [],
+        },
+      ];
+
+      const extracurricular = [
+        {
+          title: "Google Cloud Study Jams 2023",
+          timeframe: "Sep 2023 – Oct 2023",
+          organization: "GDSC, RNSIT, Bangalore, India",
+          details: [
+            "Completed hands‑on Google Cloud labs covering core GCP services and workflows.",
+            "Explored Generative AI on GCP; ranked among the top 80 candidates from Tier‑A colleges.",
+          ],
+        },
+      ];
+
+      // Nav items corresponding to section IDs
+      const navItems = [
+        { id: "hero", label: "Home" },
+        { id: "about", label: "About" },
+        { id: "education", label: "Education" },
+        { id: "experience", label: "Experience" },
+        { id: "projects", label: "Projects" },
+        { id: "skills", label: "Skills" },
+        { id: "achievements", label: "Achievements" },
+        { id: "extracurricular", label: "Extracurricular" },
+        { id: "contact", label: "Contact" },
+      ];
+
+      // Helper component for section headings
+      const SectionHeader = ({ id, children }) => (
+        <h2 id={id + "-title"}>{children}</h2>
+      );
+
+      // NavBar component
+      const NavBar = ({ navItems, activeId }) => {
+        const [open, setOpen] = useState(false);
+        const toggleNav = () => setOpen(!open);
+        return (
+          <header className={""}>
+            <div className="logo">{personalInfo.name}</div>
+            <button className="nav-toggle" aria-label="Toggle navigation" onClick={toggleNav}>
+              <i className="fa-solid fa-bars"></i>
+            </button>
+            <nav className={open ? "open" : ""}>
+              <ul>
+                {navItems.map((item) => (
+                  <li key={item.id}>
+                    <a
+                      href={`#${item.id}`}
+                      className={activeId === item.id ? "active" : ""}
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </header>
+        );
+      };
+
+      // Hero component
+      const Hero = ({ info }) => (
+        <section id="hero">
+          <div className="overlay"></div>
+          <div className="hero-content container fade-in">
+            <h1>
+              Hi, I'm <span>{info.name}</span>
+            </h1>
+            <p>{info.tagline}</p>
+            <div className="hero-buttons">
+              <a href={info.cvLink} className="btn btn-primary" download>
+                <i className="fa-solid fa-file-arrow-down"></i> Download CV
+              </a>
+              <a href="#contact" className="btn btn-outline">
+                <i className="fa-solid fa-envelope"></i> Contact Me
+              </a>
+            </div>
+          </div>
+        </section>
+      );
+
+      const About = ({ description }) => (
+        <section id="about" className="fade-in">
+          <div className="container">
+            <SectionHeader id="about">About Me</SectionHeader>
+            <p>{description}</p>
+          </div>
+        </section>
+      );
+
+      const EducationSection = ({ education }) => (
+        <section id="education" className="fade-in">
+          <div className="container">
+            <SectionHeader id="education">Education</SectionHeader>
+            <div className="cards">
+              {education.map((edu, idx) => (
+                <div className="card" key={idx}>
+                  <h3>{edu.institution}</h3>
+                  <p className="timeframe">{edu.timeframe}</p>
+                  <p className="degree">{edu.degree}</p>
+                  <p className="grade">{edu.grade}</p>
+                  <p className="location">{edu.location}</p>
+                  <h4>Relevant Coursework</h4>
+                  <ul className="coursework-list">
+                    {edu.coursework.map((course, ci) => (
+                      <li key={ci}>{course}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+      const ExperienceSection = ({ experiences }) => (
+        <section id="experience" className="fade-in">
+          <div className="container">
+            <SectionHeader id="experience">Experience</SectionHeader>
+            <div className="cards">
+              {experiences.map((exp, idx) => (
+                <div className="card" key={idx}>
+                  <h3>{exp.role} @ {exp.company}</h3>
+                  <p className="timeframe">{exp.timeframe} &mdash; {exp.location}</p>
+                  <ul className="experience-list">
+                    {exp.points.map((point, pi) => (
+                      <li key={pi}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+      const ProjectsSection = ({ projects }) => (
+        <section id="projects" className="fade-in">
+          <div className="container">
+            <SectionHeader id="projects">Projects</SectionHeader>
+            <div className="cards">
+              {projects.map((project, idx) => (
+                <div className="card" key={idx}>
+                  <h3>{project.name}</h3>
+                  <p className="timeframe">{project.timeframe}</p>
+                  <p className="project-type">{project.type}</p>
+                  <p className="project-desc">{project.description}</p>
+                  <p className="stack"><strong>Tech Stack:</strong> {project.stack}</p>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                    View Project <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+      const SkillsSection = ({ skills }) => (
+        <section id="skills" className="fade-in">
+          <div className="container">
+            <SectionHeader id="skills">Skills</SectionHeader>
+            <div className="cards">
+              {skills.map((skillCat, idx) => (
+                <div className="card" key={idx}>
+                  <h3>{skillCat.category}</h3>
+                  <ul className="skill-list">
+                    {skillCat.items.map((item, ii) => (
+                      <li key={ii}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+      const AchievementsSection = ({ achievements }) => (
+        <section id="achievements" className="fade-in">
+          <div className="container">
+            <SectionHeader id="achievements">Achievements</SectionHeader>
+            <div className="cards">
+              {achievements.map((ach, idx) => (
+                <div className="card" key={idx}>
+                  <h3>{ach.title}</h3>
+                  <p className="details">{ach.details}</p>
+                  {ach.extra && ach.extra.length > 0 && (
+                    <ul className="ach-extra">
+                      {ach.extra.map((ex, exi) => (
+                        <li key={exi}>{ex}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+      const ExtracurricularSection = ({ activities }) => (
+        <section id="extracurricular" className="fade-in">
+          <div className="container">
+            <SectionHeader id="extracurricular">Extracurricular</SectionHeader>
+            <div className="cards">
+              {activities.map((act, idx) => (
+                <div className="card" key={idx}>
+                  <h3>{act.title}</h3>
+                  <p className="timeframe">{act.timeframe}</p>
+                  <p className="organization">{act.organization}</p>
+                  <ul className="activity-details">
+                    {act.details.map((detail, di) => (
+                      <li key={di}>{detail}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+      const ContactSection = ({ info }) => (
+        <section id="contact" className="fade-in">
+          <div className="container">
+            <SectionHeader id="contact">Contact</SectionHeader>
+            <div className="contact-grid">
+              <div className="contact-item">
+                <i className="fa-solid fa-envelope"></i>
+                <a href={`mailto:${info.email}`}>{info.email}</a>
+              </div>
+              <div className="contact-item">
+                <i className="fa-solid fa-phone"></i>
+                <a href={`tel:${info.phone.replace(/\s+/g, '')}`}>{info.phone}</a>
+              </div>
+              <div className="contact-item">
+                <i className="fa-solid fa-location-dot"></i>
+                <span>{info.address}</span>
+              </div>
+              <div className="contact-item">
+                <i className="fa-brands fa-linkedin"></i>
+                <a href={info.linkedin} target="_blank" rel="noopener noreferrer">
+                  LinkedIn
+                </a>
+              </div>
+              <div className="contact-item">
+                <i className="fa-brands fa-github"></i>
+                <a href={info.github} target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+
+      const Footer = () => {
+        const year = new Date().getFullYear();
+        return (
+          <footer>
+            © {year} {personalInfo.name}. All Rights Reserved.
+          </footer>
+        );
+      };
+
+      // Main App component
+      const App = () => {
+        // Keep track of the currently active section for nav highlighting
+        const [activeId, setActiveId] = useState("hero");
+        const sectionsRef = useRef({});
+
+        useEffect(() => {
+          // Register all section elements by ID
+          navItems.forEach((item) => {
+            sectionsRef.current[item.id] = document.getElementById(item.id);
+          });
+
+          const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.35,
+          };
+          const observerCallback = (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setActiveId(entry.target.id);
+              }
+              if (entry.target.classList.contains('fade-in')) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('visible');
+                }
+              }
+            });
+          };
+          const observer = new IntersectionObserver(observerCallback, observerOptions);
+          Object.values(sectionsRef.current).forEach((section) => {
+            if (section) observer.observe(section);
+          });
+          return () => observer.disconnect();
+        }, []);
+        return (
+          <>
+            <NavBar navItems={navItems} activeId={activeId} />
+            <main>
+              <Hero info={personalInfo} />
+              <About description={aboutDescription} />
+              <EducationSection education={education} />
+              <ExperienceSection experiences={experience} />
+              <ProjectsSection projects={projects} />
+              <SkillsSection skills={skills} />
+              <AchievementsSection achievements={achievements} />
+              <ExtracurricularSection activities={extracurricular} />
+              <ContactSection info={personalInfo} />
+            </main>
+            <Footer />
+          </>
+        );
+      };
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
 </html>

@@ -1,231 +1,433 @@
-/*
- * Portfolio site styles
- *
- * A clean and modern layout built with responsive considerations. Variables define
- * the colour palette for easy theming. Sections are spaced generously to
- * improve readability. Navigation links allow smooth scrolling to page
- * sections. Icons are provided by Font Awesome via the HTML head.
- */
-
-/* Root variables for easy colour adjustments */
+/* Root colour variables for easy theme updates */
 :root {
-  --primary-color: #007acc;
-  --secondary-color: #90e0ef;
-  --accent-color: #00b4d8;
-  --background-color: #ffffff;
-  --text-color: #333333;
+  --bg-color: #f5f7fc;
+  --primary-color: #6c5ce7;
+  --secondary-color: #74b9ff;
+  --text-color: #2d3436;
+  --light-text: #636e72;
+  --nav-height: 70px;
 }
 
-/* Basic resets */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
+html,
+body {
+  height: 100%;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
   color: var(--text-color);
-  background-color: var(--background-color);
-  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
-/* Header / hero section */
-#hero {
+/* Container utility for consistent width */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header & Navigation */
+header {
+  width: 100%;
+  height: var(--nav-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
   position: relative;
-  /* Use a decorative image with a coloured overlay for the hero background. The
-     first linear-gradient provides a semi‑transparent colour overlay, and the
-     second layer specifies the actual image. */
-  background: 
-    linear-gradient(135deg, rgba(0, 180, 216, 0.85), rgba(144, 224, 239, 0.85)),
-    url('hero-bg.png') center/cover no-repeat;
-  color: #ffffff;
-  text-align: center;
-  padding: 120px 20px 80px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  padding-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--primary-color);
+}
+
+nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+/* Mobile navigation */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-toggle:focus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: var(--nav-height);
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    width: 200px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav.open {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    padding-left: 1rem;
+  }
+
+  .nav-toggle {
+    display: block;
+    color: var(--primary-color);
+  }
+}
+
+/* Hero Section */
+#hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: url("abstract-bg.png") no-repeat center/cover;
   overflow: hidden;
 }
 
-/* Navigation bar at top of hero */
-#hero nav {
+#hero .overlay {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
 }
 
-#hero nav a {
-  margin: 0 10px;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
-}
-
-#hero nav a:hover {
-  opacity: 0.8;
-}
-
-/* Hero content */
- .hero-content {
-  max-width: 800px;
-  margin: 0 auto;
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
 }
 
 .hero-content h1 span {
-  color: var(--primary-color);
+  color: var(--text-color);
 }
 
 .hero-content p {
-  font-size: 1.25rem;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
 }
 
- .social-links a {
-  margin: 0 12px;
-  color: #ffffff;
-  font-size: 1.4rem;
-  transition: color 0.3s ease;
- }
-
-.social-links a:hover {
-  color: var(--primary-color);
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Download CV button styling inside hero */
-.social-links .download-cv {
-  display: inline-block;
-  margin-left: 15px;
-  padding: 8px 16px;
-  background: #ffffff;
-  color: var(--primary-color);
-  border-radius: 4px;
-  font-size: 0.95rem;
-  font-weight: 500;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
   text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.social-links .download-cv:hover {
-  background: #e0f7fa;
-  color: var(--accent-color);
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
 }
 
-/* Main content sections */
-main {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: 0 auto;
+.btn-primary:hover {
+  background-color: var(--secondary-color);
 }
 
+.btn-outline {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Section styling */
 section {
-  margin-bottom: 60px;
+  padding: 5rem 0 4rem;
 }
 
 section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
   font-size: 2rem;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid var(--primary-color);
-  display: inline-block;
+  color: var(--primary-color);
 }
 
-/* Education, Experience and Project items */
-.education-item,
-.experience-item,
-.project-item,
-.extracurricular-item {
-  margin-bottom: 30px;
+/* Utility card container */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
-.experience-item h3,
-.project-item h3 {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
+/* Typography helpers for card meta text */
+.timeframe,
+.degree,
+.grade,
+.location,
+.project-type {
+  font-size: 0.9rem;
+  color: var(--light-text);
+  margin-bottom: 0.5rem;
 }
 
-.education-item p,
-.experience-item p,
-.project-item p,
-.extracurricular-item p {
-  margin: 5px 0;
-}
-
-.experience-item ul {
+/* Lists inside cards */
+.coursework-list,
+.experience-list,
+.skill-list,
+.ach-extra,
+.activity-details {
   list-style: disc;
-  margin-left: 20px;
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
 }
 
-/* Skills list styling */
-.skills-list {
+.coursework-list li,
+.experience-list li,
+.skill-list li,
+.ach-extra li,
+.activity-details li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+/* Project link styling */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.project-link:hover {
+  color: var(--secondary-color);
+}
+
+/* Skill list inside cards */
+.skill-list {
   list-style: none;
   padding-left: 0;
 }
 
-.skills-list li {
-  margin-bottom: 8px;
-}
-
-/* Achievements list styling */
-.achievements-list {
-  list-style: disc;
-  margin-left: 20px;
-}
-
-/* Contact section */
-#contact .contact-info p {
-  display: flex;
-  align-items: center;
-  margin: 8px 0;
-  font-size: 1rem;
-}
-
-#contact .contact-info i {
-  margin-right: 8px;
-  color: var(--primary-color);
-}
-
-#contact .contact-info a {
-  color: var(--text-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-#contact .contact-info a:hover {
-  color: var(--primary-color);
-}
-
-/* Footer styling */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: var(--primary-color);
-  color: #ffffff;
+.skill-list li {
+  background-color: #f0f4ff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 0.25rem 0.5rem 0.25rem 0;
   font-size: 0.9rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.4rem;
-  }
-  .hero-content p {
-    font-size: 1rem;
-  }
-  #hero nav {
-    position: static;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  #hero nav a {
-    display: inline-block;
-    margin: 0 8px;
-  }
+/* Achievements extra list styling */
+.ach-extra {
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+
+.ach-extra li {
+  margin-bottom: 0.4rem;
+}
+
+/* Activity details for extracurricular */
+.activity-details li {
+  margin-bottom: 0.4rem;
+}
+
+/* Contact grid and items */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-items: flex-start;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.contact-item i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.contact-item a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-item a:hover {
+  color: var(--secondary-color);
+}
+
+/* Cards for experiences, education, projects */
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.card .meta {
+  font-size: 0.9rem;
+  color: var(--light-text);
+  margin-bottom: 1rem;
+}
+
+.card ul,
+.card p {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.card ul {
+  padding-left: 1.2rem;
+}
+
+.skills-list,
+.achievements-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  list-style: none;
+}
+
+.skills-list li,
+.achievements-list li {
+  background-color: #fff;
+  border-left: 4px solid var(--primary-color);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Contact Section */
+#contact .contact-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-grid a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-grid a:hover {
+  color: var(--secondary-color);
+}
+
+.contact-grid i {
+  margin-right: 0.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: var(--light-text);
 }
