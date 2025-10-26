@@ -161,6 +161,7 @@ nav a.active::after {
   );
 }
 
+/* Legacy hero-content class is retained for backward compatibility but unused in the new design */
 .hero-content {
   position: relative;
   z-index: 1;
@@ -430,4 +431,144 @@ footer {
   padding: 2rem 0;
   font-size: 0.9rem;
   color: var(--light-text);
+}
+
+/* ---------------------------------------------------------------------
+   Custom styles for the animated hero section
+
+   The hero-inner container arranges the interactive avatar and the text
+   content side by side on larger screens while stacking them on smaller
+   screens. Decorative shapes float subtly in the background to evoke
+   movement and add visual interest, and the Avatar's pupils follow the
+   user's cursor. These animations help create a playful, modern feel
+   reminiscent of high-quality personal portfolio sites.
+*/
+
+/* Layout for hero inner content */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Avatar wrapper; ensures consistent sizing and alignment */
+.hero-avatar {
+  flex: 1 1 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Avatar container and cartoon face styling */
+.avatar {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Eyes of the avatar */
+.eye {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.eye.left {
+  top: 35%;
+  left: 25%;
+}
+
+.eye.right {
+  top: 35%;
+  right: 25%;
+}
+
+/* Pupil that follows the cursor */
+.pupil {
+  width: 16px;
+  height: 16px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+}
+
+/* Hero text area; aligns text left for side-by-side layout */
+.hero-text {
+  flex: 2 1 350px;
+}
+
+.hero-text h1 {
+  text-align: left;
+}
+
+.hero-text p {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  justify-content: flex-start;
+}
+
+/* Floating shapes for decorative animation */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  background-color: var(--secondary-color);
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.shape.shape1 {
+  width: 140px;
+  height: 140px;
+  top: 20%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.shape.shape2 {
+  width: 100px;
+  height: 100px;
+  top: 70%;
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.shape.shape3 {
+  width: 80px;
+  height: 80px;
+  top: 40%;
+  left: 60%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }

@@ -46,6 +46,55 @@
     <script type="text/babel">
       const { useState, useEffect, useRef } = React;
 
+      /**
+       * Avatar component renders a simple cartoon face with two eyes. The pupils
+       * follow the cursor as it moves over the avatar container, creating an
+       * interactive effect. This mimics the playful animation found on
+       * inspiration sites where illustrations track the user's mouse. When the
+       * cursor leaves the avatar, the pupils return to the center.
+       */
+      const Avatar = () => {
+        const [pupil, setPupil] = useState({ x: 0, y: 0 });
+        const avatarRef = useRef(null);
+
+        const handleMouseMove = (e) => {
+          const rect = avatarRef.current.getBoundingClientRect();
+          // Normalize mouse position within avatar to range [-0.5, 0.5]
+          const nx = (e.clientX - rect.left) / rect.width - 0.5;
+          const ny = (e.clientY - rect.top) / rect.height - 0.5;
+          const maxOffset = 15; // maximum translation in px
+          setPupil({ x: nx * maxOffset, y: ny * maxOffset });
+        };
+
+        const handleMouseLeave = () => {
+          setPupil({ x: 0, y: 0 });
+        };
+
+        return (
+          <div
+            className="avatar"
+            ref={avatarRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="face">
+              <div className="eye left">
+                <div
+                  className="pupil"
+                  style={{ transform: `translate(${pupil.x}px, ${pupil.y}px)` }}
+                ></div>
+              </div>
+              <div className="eye right">
+                <div
+                  className="pupil"
+                  style={{ transform: `translate(${pupil.x}px, ${pupil.y}px)` }}
+                ></div>
+              </div>
+            </div>
+          </div>
+        );
+      };
+
       // Personal information and data objects
       const personalInfo = {
         name: "Satyanshu",
@@ -244,20 +293,31 @@
       const Hero = ({ info }) => (
         <section id="hero">
           <div className="overlay"></div>
-          <div className="hero-content container fade-in">
-            <h1>
-              Hi, I'm <span>{info.name}</span>
-            </h1>
-            <p>{info.tagline}</p>
-            <div className="hero-buttons">
-              <a href={info.cvLink} className="btn btn-primary" download>
-                <i className="fa-solid fa-file-arrow-down"></i> Download CV
-              </a>
-              <a href="#contact" className="btn btn-outline">
-                <i className="fa-solid fa-envelope"></i> Contact Me
-              </a>
+          {/* The hero-inner container arranges the avatar and text side-by-side on larger screens. */}
+          <div className="hero-inner container fade-in">
+            <div className="hero-avatar">
+              {/* Interactive avatar with eyes following the cursor */}
+              <Avatar />
+            </div>
+            <div className="hero-text">
+              <h1>
+                Hi, I'm <span>{info.name}</span>
+              </h1>
+              <p>{info.tagline}</p>
+              <div className="hero-buttons">
+                <a href={info.cvLink} className="btn btn-primary" download>
+                  <i className="fa-solid fa-file-arrow-down"></i> Download CV
+                </a>
+                <a href="#contact" className="btn btn-outline">
+                  <i className="fa-solid fa-envelope"></i> Contact Me
+                </a>
+              </div>
             </div>
           </div>
+          {/* Floating decorative shapes for subtle animations */}
+          <span className="shape shape1"></span>
+          <span className="shape shape2"></span>
+          <span className="shape shape3"></span>
         </section>
       );
 
